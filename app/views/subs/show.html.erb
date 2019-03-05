@@ -1,0 +1,20 @@
+
+<h1 > <%= @sub.title %> </h1>
+    <hr>
+    <% if current_user == @sub.moderator %>
+        <a href="<%= edit_sub_url(@sub) %>">Edit this Sub</a>
+    <% end%>
+    <h3 style="font-size: 14px;"><%= @sub.description %></h3>
+    <hr>
+    <ul>
+        <% @sub.posts.each do |post|%>
+        <li class="postlinks">
+            <a href="<%= post_url(post) %>"> <%=post.title%> </a>  
+        </li>
+
+        <% end %>
+    </ul>
+
+    <a href="<%= subs_url %>"> go back </a>
+    <br>
+    <a href="<%= new_post_url %>">Post to this Sub!</a>

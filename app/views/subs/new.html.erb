@@ -1,0 +1,14 @@
+New Sub
+
+<form action="<%= subs_url %>" method="POST">
+    <%= authenticity %>
+    <input type="hidden" name="sub[moderator_id]" value="<%= current_user.id %>">
+    <label for="title">sub name:
+        <input type="text" name="sub[title]" id="title">
+    </label>
+    <br>
+    <label for="text">Description:
+        <textarea name="sub[description]" id="text" cols="30" rows="10"></textarea>
+    </label>
+    <input type="submit" value="Make new Sub">
+</form>

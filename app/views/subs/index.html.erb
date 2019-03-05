@@ -1,0 +1,11 @@
+<h1> Look at all these subs! </h1>
+<hr>
+<ul>
+<% @subs.each do |sub| %>
+    <li class="sublinks">
+        <a href="<%=sub_url(sub)%>"><%= sub.title %></a> 
+    </li>
+<% end%>
+</ul>
+
+<a href="<%= new_sub_url %>">Make a New Sub!</a>

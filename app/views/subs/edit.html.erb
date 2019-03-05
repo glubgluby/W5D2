@@ -1,0 +1,13 @@
+Edit Sub
+<form action="<%= subs_url %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+    <%= authenticity %>
+    <label for="title">sub name:
+        <input type="text" name="sub[title]" id="title" value="<%= @sub.title  %>">
+    </label>
+    <br>
+    <label for="text">Description:
+        <textarea name="sub[description]" id="text" cols="30" rows="10"><%= @sub.description %></textarea>
+    </label>
+    <input type="submit" value="Make new Sub">
+</form>

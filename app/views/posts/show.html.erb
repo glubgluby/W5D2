@@ -1,0 +1,18 @@
+<h1>Look at this Post</h1>
+
+<%= @post.title %>
+
+<%= @post.url %>
+
+<%= @post.content %>
+
+<form action="<%= comments_url %>"method="POST">
+    <%= authenticity %>
+    <input type="hidden" name="comment[post_id]" value="<%= @post.id %>">
+    <label for="comment">
+        <textarea name="comment[body]" id="comment" cols="30" rows="10"></textarea>
+    </label>
+    <input type="submit" value="Post Comment">
+</form>
+<%= place_comments(comments_hash(@post)).join("").html_safe %>
+<a href="<%= subs_url %>"> go back </a>

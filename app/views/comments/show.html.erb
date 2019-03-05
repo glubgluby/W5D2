@@ -1,0 +1,17 @@
+<%= @comment.author.username %>
+
+<%= @comment.body %>
+
+<form action="<%= comments_url %>"method="POST">
+    <%= authenticity %>
+    <input type="hidden" name="comment[post_id]" value="<%= @comment.post.id %>">
+    <input type="hidden" name="comment[parent_comment_id]" value="<%=@comment.id%>">
+    <label for="comment">
+        <textarea name="comment[body]" id="comment" cols="30" rows="10"></textarea>
+    </label>
+    <input type="submit" value="Post Comment">
+</form>
+
+<%= place_comments(comments_hash(@comment.post), @comment.id).join("").html_safe %>
+<a href="<%= subs_url %>"> go back </a>
+

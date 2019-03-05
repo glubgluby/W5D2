@@ -1,0 +1,12 @@
+Log in
+
+<form action="<%= session_url %>" method="POST">
+    <%= authenticity %>
+    <label for="username">Username:
+        <input type="text" name="user[username]" id="username">
+    </label>
+    <label for="password">Password:
+        <input type="password" name="user[password]" id="password">
+    </label>
+    <input type="submit" value="Sign In">
+</form>
